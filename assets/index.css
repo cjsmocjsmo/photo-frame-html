@@ -1,0 +1,15 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: black;
+    cursor: none;
+}
+
+img {
+    height: 800px;
+    border-radius: 8px;
+}
