@@ -165,8 +165,8 @@ func init() {
 	count := checkAndCreateDB()
 	println(count)
 	images := ScanForImages()
-	println(images)
-	// InsertAllImages(count, images)
+	println(len(images))
+	InsertAllImages(count, images)
 	// SetGlobalCount()
 }
 
