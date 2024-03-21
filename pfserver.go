@@ -126,18 +126,18 @@ func InsertImage(count int, path string, wg *sync.WaitGroup) error {
 	}
 	defer db.Close()
 
-	var exists int
-	err = db.QueryRow("SELECT COUNT(*) FROM picinfo WHERE pfpath = ?", pfpath).Scan(&exists)
-	if err != nil {
-		return err
-	}
+	// var exists int
+	// err = db.QueryRow("SELECT COUNT(*) FROM picinfo WHERE pfpath = ?", pfpath).Scan(&exists)
+	// if err != nil {
+	// 	return err
+	// }
 
-	if exists == 0 {
+	// if exists == 0 {
 		_, err = db.Exec(`INSERT INTO picinfo (pfidx, pfpath, pfhttp) VALUES (?, ?, ?)`, pfidx, pfpath, pfhttp)
 		if err != nil {
 			return err
 		}
-	}
+	// }
 	
 	println("Inserted file")
 	wg.Done()
@@ -165,9 +165,9 @@ func init() {
 	setEnvVariable()
 	count := checkAndCreateDB()
 	println(count)
-	images := ScanForImages()
-	println(len(images))
-	InsertAllImages(count, images)
+	// images := ScanForImages()
+	// println(len(images))
+	// InsertAllImages(count, images)
 	// SetGlobalCount()
 }
 
