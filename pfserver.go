@@ -116,6 +116,10 @@ func InsertImage(count int, path string, wg *sync.WaitGroup) error {
 	_, file := filepath.Split(pfpath)
 	pfhttp := "/media/" + file
 
+	println(pfidx)
+	println(pfpath)
+	println(pfhttp)
+
 	dbPath := os.Getenv("PFDBPATH")
 	db, err := sql.Open("sqlite3", dbPath)
 	if err != nil {
@@ -138,7 +142,7 @@ func InsertImage(count int, path string, wg *sync.WaitGroup) error {
 	endTime := time.Now()
 	endTime2 := endTime.Sub(startTime)
 	EndTime := endTime2.Seconds()
-	log.Printf("Inserted %s \nin %f seconds\n", pfhttp, EndTime)
+	println("Inserted %s \nin %f seconds\n", pfhttp, EndTime)
 	wg.Done()
 	return nil
 }
