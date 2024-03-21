@@ -139,7 +139,7 @@ func InsertImage(count int, path string, wg *sync.WaitGroup) error {
 		}
 	// }
 	
-	println("Inserted file")
+	log.Printf("Inserted %s \n", pfpath)
 	wg.Done()
 	return nil
 }
