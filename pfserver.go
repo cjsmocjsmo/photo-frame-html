@@ -164,7 +164,8 @@ func init() {
 	setEnvVariable()
 	count := checkAndCreateDB()
 	println(count)
-	// images := ScanForImages()
+	images := ScanForImages()
+	println(images)
 	// InsertAllImages(count, images)
 	// SetGlobalCount()
 }
