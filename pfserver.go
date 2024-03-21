@@ -178,6 +178,7 @@ type TemplateData struct {
 
 func main() {
 	picpath := os.Getenv("PFPICPATH")
+	println(picpath)
 	e := echo.New()
 
 	t := &Template{
