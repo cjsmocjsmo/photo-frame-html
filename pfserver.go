@@ -11,7 +11,6 @@ import (
 	"os"
 	"path/filepath"
 	"sync"
-	"time"
 )
 
 var GLOBAL_IDX int = 0
@@ -109,7 +108,7 @@ func InsertAllImages(count int, images []string) {
 }
 
 func InsertImage(count int, path string, wg *sync.WaitGroup) error {
-	startTime := time.Now()
+	
 	pfidx := count
 	pfpath := path
 
@@ -139,10 +138,8 @@ func InsertImage(count int, path string, wg *sync.WaitGroup) error {
 			return err
 		}
 	}
-	endTime := time.Now()
-	endTime2 := endTime.Sub(startTime)
-	EndTime := endTime2.Seconds()
-	println("Inserted %s \nin %f seconds\n", pfhttp, EndTime)
+	
+	println("Inserted file")
 	wg.Done()
 	return nil
 }
