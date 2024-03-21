@@ -18,7 +18,7 @@ var GLOBAL_IDX int = 0
 var GLOBAL_COUNT int = 0
 
 func setEnvVariable() {
-	err := os.Setenv("PFPICPATH", "/home/pipi/Pictures/MasterPicsResize/")
+	err := os.Setenv("PFPICPATH", "/home/pipi/Pictures/MasterPicsResize_SPLIT/")
 	if err != nil {
 		log.Fatal("Failed to set environment variable:", err)
 	}
