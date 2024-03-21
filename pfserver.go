@@ -105,6 +105,7 @@ func InsertAllImages(count int, images []string) {
 		go InsertImage(count, image, &wg) // Pass the address of wg instead of dereferencing it
 	}
 	wg.Wait()
+	println("INSERT COMPLETE")
 }
 
 func InsertImage(count int, path string, wg *sync.WaitGroup) error {
