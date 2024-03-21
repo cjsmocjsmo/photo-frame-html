@@ -165,10 +165,10 @@ func init() {
 	setEnvVariable()
 	count := checkAndCreateDB()
 	println(count)
-	// images := ScanForImages()
-	// println(len(images))
-	// InsertAllImages(count, images)
-	// SetGlobalCount()
+	images := ScanForImages()
+	println(len(images))
+	InsertAllImages(count, images)
+	SetGlobalCount()
 }
 
 type Template struct {
