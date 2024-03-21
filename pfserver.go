@@ -163,9 +163,10 @@ func SetGlobalCount() {
 func init() {
 	setEnvVariable()
 	count := checkAndCreateDB()
-	images := ScanForImages()
-	InsertAllImages(count, images)
-	SetGlobalCount()
+	println(count)
+	// images := ScanForImages()
+	// InsertAllImages(count, images)
+	// SetGlobalCount()
 }
 
 type Template struct {
